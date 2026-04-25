@@ -38,6 +38,7 @@ export default function Hero() {
 
       {/* Typewriter below */}
       <TypingText />
+      
 
     </section>
   );
