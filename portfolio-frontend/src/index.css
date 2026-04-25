@@ -4,5 +4,6 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #ffffff;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
 }

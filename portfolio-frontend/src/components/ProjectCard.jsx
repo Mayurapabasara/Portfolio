@@ -1,28 +1,19 @@
 export default function ProjectCard({ project }) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition">
+    <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
       
-      <img
-        src={project.image}
-        className="w-full h-48 object-cover"
-      />
+      <img src={project.image} className="h-48 w-full object-cover" />
 
       <div className="p-5">
-        <h3 className="font-semibold text-lg mb-2">
-          {project.title}
-        </h3>
+        <h3 className="font-semibold text-lg">{project.title}</h3>
+        <p className="text-gray-400 text-sm mt-2">{project.description}</p>
 
-        <p className="text-gray-500 text-sm mb-3">
-          {project.description}
-        </p>
-
-        <div className="flex gap-3 text-sm">
-          <a href={project.github} className="text-black">
-            GitHub
-          </a>
-          <a href={project.demo} className="text-gray-500">
-            Live
-          </a>
+        <div className="flex flex-wrap gap-2 mt-3">
+          {project.tech.map((t, i) => (
+            <span key={i} className="text-xs bg-blue-500/20 px-2 py-1 rounded">
+              {t}
+            </span>
+          ))}
         </div>
       </div>
     </div>

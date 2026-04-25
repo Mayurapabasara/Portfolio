@@ -1,12 +1,16 @@
+import ThemeToggle from "./ThemeToggle";
+
 export default function Navbar() {
   return (
     <nav className="fixed w-full top-0 z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
       
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
-        <h1 className="text-2xl font-bold text-blue-400">
+        <h1 className="text-xl font-bold text-blue-400">
           Mayura
         </h1>
+
+        <ThemeToggle />
 
         <div className="hidden md:flex gap-8 text-sm text-gray-300">
           <a href="#home" className="hover:text-white">Home</a>

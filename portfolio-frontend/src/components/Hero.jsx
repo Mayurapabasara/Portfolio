@@ -1,38 +1,44 @@
+import { motion } from "framer-motion";
+import profileImg from "../assets/profileImg.jpeg";
+import TypingText from "./TypingText";
+import ParticlesBg from "./ParticlesBg";
+
 export default function Hero() {
   return (
-    <section className="bg-[#f8f9fc] py-28 text-center">
-      
-      <p className="text-sm text-gray-500 mb-2">
-        👋 Hello, I'm
-      </p>
+    <section className="min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden">
 
-      <h1 className="text-5xl font-bold mb-4">
-        Mayura Pabasara
+      <ParticlesBg />
+      
+      {/* 🔵 Glow Background */}
+      <div className="absolute w-[500px] h-[500px] bg-blue-500 blur-[150px] opacity-20 rounded-full"></div>
+
+      {/* 🔁 Rotating Ring */}
+      <div className="relative flex items-center justify-center">
+        
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+          className="absolute w-[620px] h-[620px] border-4 border-blue-400 rounded-full"
+        />
+
+        {/* Profile Image */}
+        <div className="w-[600px] h-[600px] rounded-full border-4 border-white/20 overflow-hidden z-10">
+          <img
+            src={profileImg}
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+      </div>
+
+      {/* Name */}
+      <h1 className="text-5xl font-bold mt-6">
+        I am <span className="text-blue-400">Mayura Pabasara</span>
       </h1>
 
-      <h2 className="text-2xl text-gray-600 mb-6">
-        Full Stack Developer
-      </h2>
+      {/* Typewriter below */}
+      <TypingText />
 
-      <p className="max-w-xl mx-auto text-gray-500">
-        Building scalable web applications with modern technologies.
-      </p>
-
-      <div className="mt-8 flex justify-center gap-4">
-        <a
-          href="#projects"
-          className="px-6 py-3 bg-black text-white rounded-full hover:opacity-80"
-        >
-          View Projects
-        </a>
-
-        <a
-          href="/cv.pdf"
-          className="px-6 py-3 border rounded-full hover:bg-black hover:text-white"
-        >
-          Download CV
-        </a>
-      </div>
     </section>
   );
 }
